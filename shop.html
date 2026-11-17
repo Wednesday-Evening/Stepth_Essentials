@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Products — Stepth Essentials</title>
+  <meta name="description" content="Browse all Stepth Essentials products — fashion, beauty, home, electronics, and accessories. Filter by category, price, size and color.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" style="padding:0 0 10px" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span>/</span><span style="color:var(--color-chocolate)" id="crumbShop">Shop</span>
+        </nav>
+        <h1 id="shopTitle">All Products</h1>
+        <p>Your essentials, all in one place. Filter by category, price, and options to find exactly what you need.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="shop-layout">
+        <!-- Filters sidebar -->
+        <aside class="filters" id="filters">
+          <div class="filter-group">
+            <h4>Categories</h4>
+            <label><input type="checkbox" data-cat="Fashion"> Fashion</label>
+            <label><input type="checkbox" data-cat="Beauty"> Beauty</label>
+            <label><input type="checkbox" data-cat="Home"> Home</label>
+            <label><input type="checkbox" data-cat="Electronics"> Electronics</label>
+            <label><input type="checkbox" data-cat="Accessories"> Accessories</label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Max Price</h4>
+            <input type="range" id="priceRange" min="1000" max="20000" step="500" value="20000">
+            <div class="price-display">
+              <span>₦1,000</span>
+              <span id="priceMax">₦20,000</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Size</h4>
+            <label><input type="checkbox" data-size="S"> S</label>
+            <label><input type="checkbox" data-size="M"> M</label>
+            <label><input type="checkbox" data-size="L"> L</label>
+            <label><input type="checkbox" data-size="XL"> XL</label>
+            <label><input type="checkbox" data-size="13 inch"> 13 inch</label>
+            <label><input type="checkbox" data-size="14 inch"> 14 inch</label>
+            <label><input type="checkbox" data-size="15 inch"> 15 inch</label>
+            <label><input type="checkbox" data-size="Small"> Small</label>
+            <label><input type="checkbox" data-size="Medium"> Medium</label>
+            <label><input type="checkbox" data-size="Large"> Large</label>
+            <label><input type="checkbox" data-size="100ml"> 100ml</label>
+            <label><input type="checkbox" data-size="250ml"> 250ml</label>
+            <label><input type="checkbox" data-size="100g"> 100g</label>
+            <label><input type="checkbox" data-size="200g"> 200g</label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Color</h4>
+            <label><input type="checkbox" data-color="White"> White</label>
+            <label><input type="checkbox" data-color="Black"> Black</label>
+            <label><input type="checkbox" data-color="Beige"> Beige</label>
+            <label><input type="checkbox" data-color="Brown"> Brown</label>
+            <label><input type="checkbox" data-color="Cream"> Cream</label>
+            <label><input type="checkbox" data-color="Chocolate"> Chocolate</label>
+            <label><input type="checkbox" data-color="Olive"> Olive</label>
+            <label><input type="checkbox" data-color="Tan"> Tan</label>
+            <label><input type="checkbox" data-color="Terracotta"> Terracotta</label>
+            <label><input type="checkbox" data-color="Sage"> Sage</label>
+            <label><input type="checkbox" data-color="Grey"> Grey</label>
+            <label><input type="checkbox" data-color="Charcoal"> Charcoal</label>
+            <label><input type="checkbox" data-color="Navy"> Navy</label>
+            <label><input type="checkbox" data-color="Indigo"> Indigo</label>
+          </div>
+
+          <div class="filter-group">
+            <button id="clearFilters" class="btn btn-beige btn-block btn-sm">Clear All Filters</button>
+          </div>
+        </aside>
+
+        <!-- Products area -->
+        <div>
+          <div class="shop-toolbar">
+            <button class="mobile-filter-toggle" id="filterToggle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+              Filters
+            </button>
+            <span class="count" id="resultCount">Loading…</span>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Stepth Essentials</title>
+  <meta name="description" content="Get in touch with Stepth Essentials. WhatsApp, email, or send us a message — we typically respond within one business day.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" style="padding:0 0 10px" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span>/</span><span style="color:var(--color-chocolate)">Contact</span>
+        </nav>
+        <h1>Contact Us</h1>
+        <p>We're here to help. Reach out and we'll respond within one business day.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Contact info -->
+        <div class="contact-info-card">
+          <h2>Get in Touch</h2>
+          <p style="color:var(--color-text-muted); margin-bottom:20px">Whether you have a question about a product, an order, or anything else — our team is ready to help.</p>
+
+          <div class="contact-method">
+            <div class="icon" id="iconWa"></div>
+            <div>
+              <div class="label">WhatsApp (Fastest)</div>
+              <div class="value"><a href="https://wa.me/2348000000000" target="_blank" rel="noopener" style="color:inherit">Chat with us on WhatsApp</a></div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:4px">[PHONE NUMBER — TO CONFIRM] · Mon–Sat, 9am–7pm WAT</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon" id="iconMail"></div>
+            <div>
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:stephnoraodion9@gmail.com" style="color:inherit">stephnoraodion9@gmail.com</a></div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:4px">We reply within 1 business day</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon" id="iconChat"></div>
+            <div>
+              <div class="label">Social Media</div>
+              <div class="value">Instagram · Facebook · TikTok</div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:4px">Links <span class="placeholder-mark" style="background:var(--color-warning);color:#fff;padding:2px 8px;border-radius:99px;font-size:0.7rem">TO CONFIRM</span></p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon" id="iconTruck"></div>
+            <div>
+              <div class="label">Location</div>
+              <div class="value">Benin City, Nigeria</div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:4px">No physical address displayed — online store only</p>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; padding:16px; background:var(--color-cream); border-radius:8px; border-left:4px solid var(--color-chocolate)">
+            <h4 style="margin-bottom:6px; font-size:1rem">Order Support</h4>
+            <p style="font-size:0.9rem; color:var(--color-text-muted)">For order updates, please include your order number (e.g. SE-12345678) in your message so we can help you faster.</p>
+          </div>
+
+          <!-- Map placeholder -->
+          <div style="margin-top:20px; aspect-ratio:16/9; background:var(--color-beige); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--color-brown); font-style:italic; text-align:center; padding:16px; border:2px dashed var(--color-brown-light)">
+            [MAP OF BENIN CITY — TO BE EMBEDDED]
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="contact-info-card">
+          <h2>Send a Message</h2>
+          <p style="color:var(--color-text-muted); margin-bottom:20px">Fill out the form below and we'll get back to you by email or WhatsApp.</p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-grid">
+              <div class="form-two">
+                <div class="form-row">
+                  <label for="cName">Full name <span class="required">*</span></label>
+                  <input type="text" id="cName" name="name" required>
+                </div>
+                <div class="form-row">
+                  <label for="cPhone">Phone / WhatsApp <span class="required">*</span></label>
+                  <input type="tel" id="cPhone" name="phone" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="cEmail">Email <span class="required">*</span></label>
+                <input type="email" id="cEmail" name="email" required>
+              </div>
+              <div class="form-row">
+                <label for="cSubject">Subject</label>
+                <select id="cSubject" name="subject">
+                  <option value="">Select a topic…</option>
+                  <option>Product question</option>
+                  <option>Order update</option>
+                  <option>Delivery question</option>
+                  <option>Returns & refunds</option>
+                  <option>Partnership / wholesale enquiry</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="cOrder">Order number (if applicable)</label>
+                <input type="text" id="cOrder" name="order" placeholder="e.g. SE-12345678">
+              </div>
+              <div class="form-row">
+                <label for="cMsg">Your message <span class="required">*</span></label>
+                <textarea id="cMsg" name="message" required placeholder="How can we help you?"></textarea>
+              </div>
+              <div class="terms-check">
+                <input type="checkbox" id="cConsent" required>
+                <label for="cConsent">I agree to be contacted regarding my enquiry and have read the <a href="policies.html#privacy" style="text-decoration:underline">Privacy Policy</a>. <span class="required">*</span></label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              <p style="font-size:0.8rem; color:var(--color-text-muted); text-align:center">We typically respond within 1 business day.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('iconWa').innerHTML = ICONS.whatsapp;
+      document.getElementById('iconMail').innerHTML = ICONS.mail;
+      document.getElementById('iconChat').innerHTML = ICONS.chat;
+      document.getElementById('iconTruck').innerHTML = ICONS.truck;
+    });
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      // In production: send to backend or service like Formspree
+      const form = e.target;
+      form.innerHTML = `
+        <div class="form-success" style="padding:24px; text-align:center">
+          <div style="font-size:2.5rem; margin-bottom:12px">✓</div>
+          <h3 style="margin-bottom:8px">Message sent!</h3>
+          <p>Thank you for reaching out. We'll respond within 1 business day.</p>
+        </div>
+      `;
+      showToast('Message sent successfully', 'success');
+    }
+  </script>
+</body>
+</html>
